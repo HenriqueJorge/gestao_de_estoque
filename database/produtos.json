@@ -1,1 +1,12 @@
-{"proxId":2,"produtos":[{"id":0,"nome":"macarrao","valor":9},{"id":1,"nome":"maçã","valor":10}]}
+{
+    "proxId": 3,
+    "produtos": [{
+        "id": 0,
+        "nome": "l",
+        "valor": 5
+    }, {
+        "id": 2,
+        "nome": "l",
+        "valor": 5
+    }]
+}
