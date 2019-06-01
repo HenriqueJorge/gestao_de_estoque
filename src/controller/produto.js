@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const produtoRepo = require('../repository/produtoRepository')
 const seguranca = require('../util/seguranca.js')
+const produtoService = require('../service/produtoService.js')
 
 router.get('/',(req,res) => 
     res.json(produtoRepo.todos())
@@ -12,7 +13,13 @@ router.get('/:id',(req,res) =>
 );
 
 router.post('/',  (req,res)=> {
-    res.json(produtoRepo.adicionar(req.body))
+    try{
+        res.json(produtoService.adicionarProduto(req.body))
+    }
+    catch(UserException){
+        res.sendStatus(400).json('Parametros Incorreta')
+    }
+    
 });
 
 router.put('/:id', (req,res) =>{
